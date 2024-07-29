@@ -11,7 +11,7 @@ export default function TableHeader() {
           Description
         </th>
         <th scope='col' className='px-4 py-3'>
-          <span className='sr-only'>Actions</span>
+          Actions
         </th>
       </tr>
     </thead>

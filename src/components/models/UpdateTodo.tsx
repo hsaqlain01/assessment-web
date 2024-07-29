@@ -15,11 +15,9 @@ import { ICreateTodo } from '@/interfaces/todo/create.interface';
 export default function UpdateTodoModal({
   id,
   handleToggleModal,
-  setIsDropdownOpen,
 }: {
   id: number;
   handleToggleModal: () => void;
-  setIsDropdownOpen: any;
 }) {
   const queryClient = useQueryClient();
   const [loading, setLoading] = useState(false);
@@ -34,7 +32,6 @@ export default function UpdateTodoModal({
       onSuccess: () => {
         queryClient.invalidateQueries('todos');
         handleToggleModal();
-        setIsDropdownOpen(null);
         notify('success', 'Todo Updated Successfully.');
       },
       onError: () => {

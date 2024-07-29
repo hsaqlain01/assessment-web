@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
 import Table from './components/table';
-import Header from './components/Header';
 import Pagination from '../pagination';
 import { GrayLoader } from '../loader';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import { limit } from '@/common/Constant';
 import { useAllTodos } from '@/hooks/useAllTodos';
 
 export default function TodoListing() {
-  const limit = '10';
   const [page, setPage] = useState<number>(1);
 
   const { data, isLoading } = useAllTodos(String(page), limit);

@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import TableHeader from './components/Header';
-import DropdownMenu from './components/DropdownMenu';
+import UpdateTodo from './components/UpdateTodo';
+import DeleteTodo from './components/DeleteTodo';
 import { IGetAllTodos } from '@/interfaces/todo/get-all.interface';
 
 export default function Table({
@@ -10,8 +10,6 @@ export default function Table({
   page: number;
   data: IGetAllTodos;
 }) {
-  const [isDropdownOpen, setIsDropdownOpen] = useState<number | null>(null);
-
   return (
     <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
       <TableHeader />
@@ -27,12 +25,12 @@ export default function Table({
             <td className='px-4 py-3 max-w-[12rem] truncate'>
               {item.description}
             </td>
-            <DropdownMenu
-              page={page}
-              id={item.id}
-              isDropdownOpen={isDropdownOpen}
-              setIsDropdownOpen={setIsDropdownOpen}
-            />
+            <td className='px-4 py-3 flex items-center relative'>
+              <div className='flex items-center space-x-4'>
+                <UpdateTodo id={item.id} />
+                <DeleteTodo id={item.id} page={page} />
+              </div>
+            </td>
           </tr>
         ))}
       </tbody>
