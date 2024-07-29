@@ -28,7 +28,7 @@ const TodoActionModal = ({
         <div className='grid gap-4 mb-4 grid-cols-1 sm:grid-cols-1'>
           <FormInput
             inputLabel='Title'
-            placeholder='Example'
+            placeholder='Title'
             value={values.title}
             type='text'
             name='title'
