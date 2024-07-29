@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { useFormik } from 'formik';
 import React, { useState } from 'react';
 
-import { validationSchema } from './validations/register-cchema';
 import { notify } from '@/utils/toast';
 import { registerAuth } from '@/lib/RegisterAuth';
 import { Loader } from '@/components/loader';
 import FormCardTheme from '@/components/form-card-theme';
 import FormInput from '@/components/form-input';
+import { registerValidationSchema } from '../validations/schemas';
 
 export default function Register() {
   const [loading, setLoading] = useState(false);
@@ -38,7 +38,7 @@ export default function Register() {
       email: '',
       password: '',
     },
-    validationSchema,
+    validationSchema: registerValidationSchema,
     onSubmit: async (values) => {
       await handleFormSubmit(values);
     },

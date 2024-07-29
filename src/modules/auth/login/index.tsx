@@ -6,9 +6,9 @@ import { notify } from '@/utils/toast';
 
 import { loginAuth } from '@/lib/LoginAuth';
 import { Loader } from '@/components/loader';
-import { validationSchema } from './validations/login-schema';
 import FormCardTheme from '@/components/form-card-theme';
 import FormInput from '@/components/form-input';
+import { loginValidationSchema } from '../validations/schemas';
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
@@ -34,7 +34,7 @@ export default function Login() {
       username: '',
       password: '',
     },
-    validationSchema,
+    validationSchema: loginValidationSchema,
     onSubmit: async (values) => {
       await handleFormSubmit(values);
     },
