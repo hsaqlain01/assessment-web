@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import UpdateTodoModal from '@/components/models/UpdateTodo';
 
-export default function UpdateTodo({ id }: { id: number }) {
+export default function UpdateTodo({ id, page }: { id: number; page: number }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleModal = () => {
@@ -33,7 +33,11 @@ export default function UpdateTodo({ id }: { id: number }) {
       </button>
 
       {isOpen && (
-        <UpdateTodoModal id={id} handleToggleModal={handleToggleModal} />
+        <UpdateTodoModal
+          id={id}
+          page={page}
+          handleToggleModal={handleToggleModal}
+        />
       )}
     </Fragment>
   );

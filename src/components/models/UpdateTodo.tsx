@@ -1,6 +1,7 @@
 import { Loader } from '../loader';
 import { useFormik } from 'formik';
 import { notify } from '@/utils/toast';
+import { limit } from '@/common/Constant';
 import FormInput from '../common/FormInput';
 import { GetOneTodo } from '@/api/todo/GetOne';
 import { UpdateTodo } from '@/api/todo/Update';
@@ -14,9 +15,11 @@ import { ICreateTodo } from '@/interfaces/todo/create.interface';
 
 export default function UpdateTodoModal({
   id,
+  page,
   handleToggleModal,
 }: {
   id: number;
+  page: number;
   handleToggleModal: () => void;
 }) {
   const queryClient = useQueryClient();
@@ -30,7 +33,7 @@ export default function UpdateTodoModal({
     (formValues: any) => UpdateTodo(formValues, String(id)),
     {
       onSuccess: () => {
-        queryClient.invalidateQueries('todos');
+        queryClient.invalidateQueries(['todos', String(page), limit]);
         handleToggleModal();
         notify('success', 'Todo Updated Successfully.');
       },
