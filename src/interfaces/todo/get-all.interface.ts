@@ -1,6 +1,6 @@
 export interface IGetAllTodos {
   pagination: IPagination;
-  data: ITodosListing[];
+  data: ITodo[];
 }
 
 export interface IPagination {
@@ -11,16 +11,16 @@ export interface IPagination {
   currentRecords: number;
 }
 
-export interface ITodosListing {
+export interface ITodo {
   createdAt: string;
   id: number;
   title: string;
   description: string;
   completed: number;
-  user: ILsitingUser;
+  user: IUser;
 }
 
-export interface ILsitingUser {
+export interface IUser {
   id: number;
   username: string;
 }

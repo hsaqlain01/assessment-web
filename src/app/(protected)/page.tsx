@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import TodoListing from '@/components/todo-listing';
+import TodoListing from '@/modules/todo-listing';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 export default function Home() {

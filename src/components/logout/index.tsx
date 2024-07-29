@@ -3,6 +3,7 @@
 import React, { Fragment, useState } from 'react';
 import { deleteCookie } from 'cookies-next';
 import LogoutModal from '../models/Logout';
+import ModalLayout from '../modal';
 
 export default function Logout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,7 +27,12 @@ export default function Logout() {
       </button>
 
       {isModalOpen && (
-        <LogoutModal toggleModal={toggleModal} handleLogout={handleLogout} />
+        <ModalLayout
+          title='Are you sure you want to logout?'
+          onClose={toggleModal}
+          ignoreFooter={false}
+          onSubmit={handleLogout}
+        />
       )}
     </Fragment>
   );

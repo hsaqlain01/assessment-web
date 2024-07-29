@@ -26,21 +26,7 @@ const Pagination: React.FC<PaginationProps> = ({ data, page, setPage }) => {
   };
 
   return (
-    <div className='pagination-container flex items-center bg-gray-400 justify-between border border-gray-20 px-2 py-2 sm:px-2 sm:flex-initial'>
-      <div className='pagination-buttons flex flex-1 justify-between sm:hidden xs:hidden xxs:hidden'>
-        <button
-          onClick={handlePrevPage}
-          className='pagination-button-prev relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-black hover:bg-white'
-        >
-          Previous
-        </button>
-        <button
-          onClick={handleNextPage}
-          className='pagination-button-next relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50'
-        >
-          Next
-        </button>
-      </div>
+    <div className='pagination-container flex items-center bg-primary-700 justify-between border border-gray-20 px-2 py-2 sm:px-2 sm:flex-initial'>
       {data && (
         <PaginationButtons
           data={data}

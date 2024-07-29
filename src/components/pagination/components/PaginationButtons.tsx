@@ -41,9 +41,9 @@ const PaginationButtons = ({
   }
 
   return (
-    <div className='2xl:flex lg:flex md:flex sm:flex-initial xs:flex-initial xxs:flex-initial items-center justify-between w-full'>
+    <div className='2xl:flex lg:flex md:flex sm:flex-initial xs:flex-initial xxs:flex-initial items-center justify-between w-full md:px-2'>
       <div>
-        <p className='text-sm text-black sm:mb-2 2xl:mb-0 lg:mb-0'>
+        <p className='text-sm text-white sm:mb-2 2xl:mb-0 lg:mb-0'>
           Showing{' '}
           <span className='font-medium'>
             {data ? data?.page * data?.limit - data?.limit + 1 : 0}
@@ -60,7 +60,7 @@ const PaginationButtons = ({
 
       <div>
         <nav
-          className='isolate inline-flex -space-x-px rounded-md shadow-sm'
+          className='isolate inline-flex -space-x-px rounded-md shadow-sm pt-2'
           aria-label='Pagination'
         >
           <button onClick={handlePrevPage} className='pagination-button'>

@@ -5,7 +5,7 @@ import { baseURL } from '@/common/Constant';
 import { ICreateTodo } from '@/interfaces/todo/create.interface';
 import { IApiResponse } from '@/interfaces/api-response.interface';
 
-export const UpdateTodo = async (
+export const UpdateTodoApi = async (
   formData: {
     title: string;
     description: string;
